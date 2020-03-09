@@ -24,7 +24,7 @@ class testPaymentController extends Controller
 			]);
 		}
 		$data = json_decode($request->input('data'),1);
-		TestPayment::dispatch($data["order_number"],$data["sum"]);
+		TestPayment::dispatch($data["order_number"],$data["sum"],$data["commision"],$data["id"]);
 		return response()->json([
 			"status"=>"ok",
 			"sig"=>$sidStatus
